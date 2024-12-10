@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabb's Motoshop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #e91e63, #ff5722);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background: #e91e63;
+            color: white;
+            border-radius: 5px;
+        }
+        .page {
+            display: none;
+            padding: 20px;
+            text-align: center;
+        }
+        .active {
+            display: block;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+            color: #e91e63;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+        }
+        footer a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            nav a {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+            nav a {
+                padding: 6px 8px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome to <span class="highlight">Gabb's Motoshop</span></h1>
+        <p>Your One-Stop Shop for Motor Parts</p>
+    </header>
+    <nav>
+        <a href="#home" onclick="showPage('home')">Home</a>
+        <a href="#about" onclick="showPage('about')">About</a>
+        <a href="#products" onclick="showPage('products')">Products</a>
+        <a href="#services" onclick="showPage('services')">Services</a>
+        <a href="#gallery" onclick="showPage('gallery')">Gallery</a>
+        <a href="#contact" onclick="showPage('contact')">Contact</a>
+    </nav>
+
+    <div id="home" class="page active">
+        <h2>Welcome to Gabb's Motoshop</h2>
+        <p>Your go-to destination for reliable, high-quality motor parts.</p>
+    </div>
+
+    <div id="products" class="page">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product">
+                <img src="image.jpg/brake.jpg" alt="High-performance Brake Pads">
+                <h3>Brake Pads</h3>
+                <p>Price: ₱100</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/oil.jpg" alt="Premium Engine Oil">
+                <h3>Engine Oil</h3>
+                <p>Price: ₱150</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/sparl.jpg" alt="Durable Spark Plugs">
+                <h3>Spark Plugs</h3>
+                <p>Price: ₱105</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/helmet.jpg" alt="Riding Helmet">
+                <h3>Riding Helmet</h3>
+                <p>Price: ₱4,000</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/tire.jpg" alt="High-quality Motorcycle Tires">
+                <h3>Motorcycle Tires</h3>
+                <p>Price: ₱820</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/chain.jpg" alt="Heavy-duty Drive Chain">
+                <h3>Drive Chain</h3>
+                <p>Price: ₱150</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/bar.jpg" alt="Ergonomic Handlebars">
+                <h3>Handlebars</h3>
+                <p>Price: ₱700</p>
+            </div>
+            <div class="product">
+                <img src="image.jpg/pipe.jpg" alt="Performance Exhaust System">
+                <h3>Exhaust System</h3>
+                <p>Price: ₱1,000</p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="services" class="page">
+        <h2>Our Services</h2>
+        <p>We offer maintenance, repair, and custom modifications for motorcycles.</p>
+    </div>
+
+    <div id="gallery" class="page">
+        <h2>Gallery</h2>
+        <img src="image.jpg/cafe.jpg" alt="Gallery 1" style="margin: 10px;">
+        <img src="image.jpg/bobber.jpg" alt="Gallery 2" style="margin: 10px;">
+    </div>
+
+    <div id="contact" class="page">
+        <h2>Contact Us</h2>
+        <p>Location: 926 Brgy Tina, Tacurong City </p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@gabbsmotoshop.com</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Gabb's Motoshop | Follow us on <a target="_blank" href="https://www.facebook.com/jeonjungkook.pa">Facebook</a>, <a target="_blank" href="https://www.instagram.com/angelogabriel.233/">Instagram</a></p>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
